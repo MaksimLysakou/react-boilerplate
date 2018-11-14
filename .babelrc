@@ -1,0 +1,72 @@
+{
+  "env": {
+    "development": {
+      "presets": [
+        [
+          "env",
+          {
+            "modules": false,
+            "loose": true,
+            "targets": {
+              "browsers": [
+                "last 2 Chrome versions",
+                "last 2 Safari versions",
+                "last 2 iOS versions",
+                "IE 11"
+              ]
+            }
+          }
+        ],
+        "react"
+      ],
+      "plugins": [
+        "transform-class-properties",
+        "transform-object-rest-spread",
+        "transform-inline-environment-variables"
+      ]
+    },
+    "production": {
+      "presets": [
+        "babili",
+        [
+          "env",
+          {
+            "loose": true,
+            "targets": {
+              "browsers": [
+                "last 2 Chrome versions",
+                "last 2 Safari versions",
+                "last 2 iOS versions",
+                "IE 11"
+              ]
+            }
+          }
+        ],
+        "react"
+      ],
+      "plugins": [
+        "transform-class-properties",
+        "transform-object-rest-spread",
+        "transform-inline-environment-variables",
+        [
+          "transform-react-remove-prop-types",
+          {
+            "removeImport": true
+          }
+        ]
+      ]
+    },
+    "test": {
+      "presets": [
+        "env",
+        "react"
+      ],
+      "plugins": [
+        "transform-class-properties",
+        "transform-object-rest-spread",
+        "transform-inline-environment-variables",
+        "transform-es2015-modules-commonjs"
+      ]
+    }
+  }
+}
